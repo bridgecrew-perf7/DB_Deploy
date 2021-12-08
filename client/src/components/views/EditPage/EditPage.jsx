@@ -21,10 +21,7 @@ export const EditPage = () => {
   };
 
   const deleteAccount = () => {
-    apiClient
-      .delete("/users/me")
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+    apiClient.delete("/users/me").catch((err) => console.log(err));
     document.location.href = "/login";
   };
 
@@ -53,10 +50,10 @@ export const EditPage = () => {
       alert("상태 메세지는 최대 20자로 변경 가능합니다.");
     } else {
       if (statusMessage !== "") {
-        apiClient.patch("/users/me", statusMessageGroup).then((res) => console.log(res.data));
+        apiClient.patch("/users/me", statusMessageGroup);
       }
       if (location !== "") {
-        apiClient.patch("/users/me", locationGroup).then((res) => console.log(res.data));
+        apiClient.patch("/users/me", locationGroup);
       }
       document.location.href = "/edit";
     }

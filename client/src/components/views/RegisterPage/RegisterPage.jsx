@@ -28,7 +28,7 @@ export const RegisterPage = (history) => {
     } else if (state.confirmPassword !== state.password) {
       alert("비밀번호를 다시 확인해주세요");
     } else {
-      apiClient.post("/users/register", payload).then((res) => console.log(res.data));
+      apiClient.post("/users/register", payload);
       alert("회원가입 완료!");
       document.location.href = "/login";
     }
@@ -68,10 +68,8 @@ export const RegisterPage = (history) => {
       if (!regexp.test(ID_input)) {
         alert("아이디 형식이 올바르지 않습니다!\n20자 이내 특수문자 금지");
       } else if (res.data.unique === false) {
-        console.log(res.data);
         alert("이미 사용중인 아이디 입니다!");
       } else {
-        console.log(res);
         alert("사용 가능한 아이디 입니다!");
         Id_now.current.readOnly = "true";
       }
