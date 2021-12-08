@@ -8,7 +8,7 @@
     "backend": "nodemon server/app.js",
     "frontend": "npm run start --prefix client",
     "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\"",
-    "server": "babel-node server/app.js"
+    "server": "node -r esm server/app.js"
   },
   "author": "",
   "license": "ISC",
