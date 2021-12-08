@@ -9,7 +9,6 @@ import { Nearby } from "./Nearby/Nearby";
 import { FriendSearchPage } from "./FriendSearchPage/FriendSearch";
 import { FriendListPage } from "./FriendListPage/FriendList";
 import { EditPage } from "./EditPage/EditPage";
-import { Socket } from "./Socket/Socket";
 import { NearbyPeople } from "./Nearby/NearbyPeople";
 import Auth from "../../hoc/auth";
 
@@ -27,7 +26,6 @@ export const App = () => {
         <Route exact path="/nearby/people/:locId" component={Auth(NearbyPeople, true)} />
         <Route exact path="/chats" component={Auth(ChatList, true)} />
         <Route exact path="/chats/:roomId" component={Auth(ChatRoomPage, true)} />
-        <Route exact path="/socket/:roomId" component={Auth(Socket, true)} />
       </Switch>
     </div>
   );
