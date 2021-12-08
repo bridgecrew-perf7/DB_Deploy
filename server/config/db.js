@@ -1,13 +1,11 @@
-require("dotenv").config();
 const mysql = require("mysql2");
-const env = process.env;
 
 const pool = mysql.createPool({
   multipleStatements: true,
-  host: env.DB_HOST,
-  user: env.DB_USER,
-  database: env.DB_DATABASE,
-  password: env.DB_PASSWORD,
+  host: "165.132.105.26",
+  user: "team03",
+  database: "database03",
+  password: "project03",
   port: env.DB_PORT || 3306,
   dateStrings: "date", // For date formatting
 });
