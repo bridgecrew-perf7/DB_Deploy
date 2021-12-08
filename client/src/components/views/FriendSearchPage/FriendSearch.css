@@ -1,0 +1,45 @@
+.friendcontainer {
+  padding: 20px 50px 20px 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.SearchResult {
+  padding: 0 30px 30px 30px;
+  overflow-y: scroll;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.formStyle {
+  height: 40px;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 0 0 0 20px;
+}
+.friend {
+  justify-content: space-between;
+  background-color: whitesmoke;
+  align-items: center;
+  display: flex;
+  padding: 20px;
+  margin: 25px;
+  border: 3px solid black;
+  border-radius: 20px;
+}
+.ButtonStyle {
+  padding: 10px;
+  background-color: inherit;
+  border-radius: 5px;
+}
+.LinkStyle {
+  text-decoration: none;
+  color: inherit;
+}
+:focus,
+:hover,
+:visited,
+:link,
+:active {
+  text-decoration: none;
+}
