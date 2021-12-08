@@ -1,8 +1,9 @@
 import axios from "axios";
+require("dotenv").config();
 
 const apiClient = axios.create({
   // baseURL: process.env.REACT_APP_API_BASEURL,
-  baseURL: process.env.API_URL || "http://localhost:5000/api",
+  baseURL: `${window.location.protocol}//${window.location.hostname}:${process.env.PORT}/api`,
   timeout: 5000,
   withCredentials: true,
   headers: {
