@@ -71,8 +71,13 @@ class User {
     }
   }
 
-  static async searchUsers(userId) {
-    const sql = `SELECT * FROM users WHERE userId LIKE '%${userId}%' ORDER BY binary(name);`;
+  static async searchUsers(searchTerm) {
+    const sql = `
+      SELECT * FROM users WHERE userId LIKE '%${searchTerm}%'
+      UNION
+      SELECT * FROM users WHERE name LIKE '%${searchTerm}%'
+      ORDER BY binary(name);
+    `;
     const [userRow, _] = await db.execute(sql);
     return userRow;
   }
@@ -98,10 +103,10 @@ class User {
     await db.execute(sql);
   }
 
-  static destruct(user) {
+  static destruct = (user) => {
     const { password, ...userDTO } = user;
     return userDTO;
-  }
+  };
 
   static validatePassword(password, hashedPassword) {
     return bcrypt.compareSync(password, hashedPassword);
