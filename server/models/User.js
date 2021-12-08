@@ -103,10 +103,10 @@ class User {
     await db.execute(sql);
   }
 
-  static destruct = (user) => {
+  static destruct(user) {
     const { password, ...userDTO } = user;
     return userDTO;
-  };
+  }
 
   static validatePassword(password, hashedPassword) {
     return bcrypt.compareSync(password, hashedPassword);
